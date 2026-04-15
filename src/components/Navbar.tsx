@@ -1,56 +1,27 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import ThemeToggle from "./ThemeToggle";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
-const links = ["About", "Skills", "Experience", "Projects", "Education", "Contact"];
+const links = ["Home", "About", "Skills", "Experience", "Projects", "Education", "Contact"];
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
-
   return (
-    <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-border">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
-        <a href="#" className="font-heading font-bold text-xl text-foreground">
-          Ronit<span className="text-primary">.</span>
-        </a>
-
-        <div className="hidden md:flex items-center gap-6">
-          {links.map((l) => (
-            <a key={l} href={`#${l.toLowerCase()}`} className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              {l}
-            </a>
-          ))}
-          <ThemeToggle />
-        </div>
-
-        <div className="md:hidden flex items-center gap-2">
-          <ThemeToggle />
-          <button onClick={() => setOpen(!open)} className="p-2 text-foreground">
-            {open ? <X size={22} /> : <Menu size={22} />}
-          </button>
-        </div>
-      </div>
-
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="md:hidden overflow-hidden bg-background border-b border-border"
+    <motion.nav
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="fixed top-4 left-1/2 -translate-x-1/2 z-50"
+    >
+      <div className="flex items-center gap-1 px-2 py-2 rounded-full bg-background/80 backdrop-blur-lg border border-border shadow-lg">
+        {links.map((l) => (
+          <a
+            key={l}
+            href={l === "Home" ? "#" : `#${l.toLowerCase()}`}
+            className="px-3 py-1.5 text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary rounded-full transition-all whitespace-nowrap"
           >
-            <div className="px-4 py-4 flex flex-col gap-3">
-              {links.map((l) => (
-                <a key={l} href={`#${l.toLowerCase()}`} onClick={() => setOpen(false)} className="text-muted-foreground hover:text-primary transition-colors">
-                  {l}
-                </a>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
+            {l}
+          </a>
+        ))}
+      </div>
+    </motion.nav>
   );
 };
 

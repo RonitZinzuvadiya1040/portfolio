@@ -1,5 +1,6 @@
 import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const ThemeToggle = () => {
   const [dark, setDark] = useState(() => {
@@ -16,13 +17,16 @@ const ThemeToggle = () => {
   }, [dark]);
 
   return (
-    <button
+    <motion.button
+      initial={{ opacity: 0, scale: 0 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ delay: 0.5 }}
       onClick={() => setDark(!dark)}
-      className="p-2 rounded-lg bg-secondary text-secondary-foreground hover:bg-accent transition-colors"
+      className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-secondary text-secondary-foreground hover:bg-accent border border-border shadow-lg transition-colors"
       aria-label="Toggle theme"
     >
       {dark ? <Sun size={20} /> : <Moon size={20} />}
-    </button>
+    </motion.button>
   );
 };
 

@@ -6,6 +6,7 @@ import ProjectsSection from "@/components/ProjectsSection";
 import EducationSection from "@/components/EducationSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const Index = () => (
   <div className="min-h-screen">
@@ -28,6 +29,7 @@ const Index = () => (
     <EducationSection />
     <ContactSection />
     <Footer />
+    <ThemeToggle />
   </div>
 );
 
