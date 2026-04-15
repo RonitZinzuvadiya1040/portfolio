@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Github, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, LinkedinIcon } from "lucide-react";
 
 const ContactSection = () => (
   <section id="contact" className="py-20 section-alt">

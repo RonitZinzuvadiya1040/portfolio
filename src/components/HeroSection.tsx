@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, MapPin, ExternalLink } from "lucide-react";
+import { GitlabIcon, Mail, MapPin, ExternalLink, Linkedin as LinkedinIcon } from "lucide-react";
 
 const HeroSection = () => (
   <section className="hero-gradient min-h-screen flex items-center pt-16">
