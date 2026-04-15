@@ -42,6 +42,9 @@ const HeroSection = () => (
           <a href="https://linkedin.com/in/ronit-zinzuvadiya" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-secondary text-secondary-foreground font-medium hover:bg-accent transition-colors">
             <LinkedinIcon /> LinkedIn
           </a>
+          <a href="/Ronit_Zinzuvadiya_Laravel_Developer.pdf" download className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-secondary text-secondary-foreground font-medium hover:bg-accent transition-colors">
+            <Download size={18} /> Resume
+          </a>
         </motion.div>
       </div>
     </div>
