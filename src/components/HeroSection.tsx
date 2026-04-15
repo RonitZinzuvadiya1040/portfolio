@@ -42,9 +42,6 @@ const HeroSection = () => (
           <a href="https://linkedin.com/in/ronit-zinzuvadiya" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-secondary text-secondary-foreground font-medium hover:bg-accent transition-colors">
             <LinkedinIcon /> LinkedIn
           </a>
-          <a href="https://ronitzinzuvadiya.vercel.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-secondary text-secondary-foreground font-medium hover:bg-accent transition-colors">
-            <ExternalLink size={18} /> Portfolio
-          </a>
         </motion.div>
       </div>
     </div>
