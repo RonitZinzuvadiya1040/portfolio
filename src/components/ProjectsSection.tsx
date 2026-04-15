@@ -1,12 +1,38 @@
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 const projects = [
-  { name: "Golden Pathways", url: "https://goldenpathways.com", desc: "Full-featured web platform built with modern backend technologies." },
-  { name: "Meshhh", url: "https://meshhh.com", desc: "Interactive web application with custom functionality and integrations." },
-  { name: "Independent Music Mall", url: "https://www.independentmusicmall.com", desc: "E-commerce platform for independent music artists and labels." },
-  { name: "Viva Wireless", url: "https://www.vivawirelessusa.com", desc: "Wireless service provider platform with user-friendly interface." },
-  { name: "Scriptrx", url: "https://scriptrx.co.uk", desc: "Healthcare-related web platform serving UK market." },
+  {
+    name: "Golden Pathways",
+    url: "https://goldenpathways.com",
+    desc: "Full-featured web platform built with modern backend technologies.",
+    tech: ["Laravel", "PHP", "MySQL", "REST API", "Tailwind CSS"],
+  },
+  {
+    name: "Meshhh",
+    url: "https://meshhh.com",
+    desc: "Interactive web application with custom functionality and integrations.",
+    tech: ["Laravel", "jQuery", "AJAX", "Bootstrap", "MySQL"],
+  },
+  {
+    name: "Independent Music Mall",
+    url: "https://www.independentmusicmall.com",
+    desc: "E-commerce platform for independent music artists and labels.",
+    tech: ["Magento 2", "PHP", "MySQL", "JavaScript", "CSS"],
+  },
+  {
+    name: "Viva Wireless",
+    url: "https://www.vivawirelessusa.com",
+    desc: "Wireless service provider platform with user-friendly interface.",
+    tech: ["Laravel", "PHP", "MySQL", "Bootstrap", "REST API"],
+  },
+  {
+    name: "Scriptrx",
+    url: "https://scriptrx.co.uk",
+    desc: "Healthcare-related web platform serving UK market.",
+    tech: ["CodeIgniter 3", "PHP", "MySQL", "jQuery", "AJAX"],
+  },
 ];
 
 const ProjectsSection = () => (
@@ -33,13 +59,20 @@ const ProjectsSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.08 }}
-            className="group bg-card border border-border rounded-xl p-6 hover:glow-border transition-all hover:-translate-y-1"
+            className="group bg-card border border-border rounded-xl p-6 hover:glow-border transition-all hover:-translate-y-1 flex flex-col"
           >
             <div className="flex items-start justify-between mb-3">
               <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">{p.name}</h3>
               <ExternalLink size={16} className="text-muted-foreground group-hover:text-primary transition-colors shrink-0 mt-1" />
             </div>
-            <p className="text-sm text-muted-foreground">{p.desc}</p>
+            <p className="text-sm text-muted-foreground mb-4">{p.desc}</p>
+            <div className="flex flex-wrap gap-1.5 mt-auto">
+              {p.tech.map((t) => (
+                <Badge key={t} variant="secondary" className="text-xs font-normal">
+                  {t}
+                </Badge>
+              ))}
+            </div>
           </motion.a>
         ))}
       </div>
