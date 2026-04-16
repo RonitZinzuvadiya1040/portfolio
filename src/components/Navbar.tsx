@@ -1,8 +1,35 @@
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 const links = ["Home", "About", "Skills", "Experience", "Projects", "Education", "Contact"];
 
 const Navbar = () => {
+  const [activeSection, setActiveSection] = useState("Home");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY + 120;
+
+      if (scrollY < 200) {
+        setActiveSection("Home");
+        return;
+      }
+
+      for (let i = links.length - 1; i >= 0; i--) {
+        const id = links[i] === "Home" ? "hero" : links[i].toLowerCase();
+        const el = document.getElementById(id);
+        if (el && el.offsetTop <= scrollY) {
+          setActiveSection(links[i]);
+          return;
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <motion.nav
       initial={{ y: -100, opacity: 0 }}
@@ -15,7 +42,11 @@ const Navbar = () => {
           <a
             key={l}
             href={l === "Home" ? "#" : `#${l.toLowerCase()}`}
-            className="px-3 py-1.5 text-xs sm:text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary rounded-full transition-all whitespace-nowrap"
+            className={`px-3 py-1.5 text-xs sm:text-sm font-medium rounded-full transition-all whitespace-nowrap ${
+              activeSection === l
+                ? "bg-primary text-primary-foreground"
+                : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+            }`}
           >
             {l}
           </a>

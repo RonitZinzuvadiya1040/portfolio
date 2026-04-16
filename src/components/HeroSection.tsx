@@ -10,7 +10,7 @@ const LinkedinIcon = () => (
 );
 
 const HeroSection = () => (
-  <section className="hero-gradient min-h-screen flex items-center pt-16">
+  <section id="hero" className="hero-gradient min-h-screen flex items-center pt-16">
     <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full">
       <div className="flex flex-col items-center text-center py-20">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
