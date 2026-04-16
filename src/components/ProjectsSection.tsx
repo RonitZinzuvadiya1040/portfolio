@@ -33,6 +33,12 @@ const projects = [
     desc: "E-prescription healthcare platform for secure digital prescriptions and pharmacy integration.",
     tech: ["Laravel", "PHP", "Third-party APIs", "Payment Integration", "MySQL", "Healthcare"],
   },
+  {
+    name: "Chat Application",
+    url: "https://github.com/RonitZinzuvadiya1040/Chat-Laravel-Pusher",
+    desc: "Real-time chat application built with Laravel and Pusher for instant messaging functionality.",
+    tech: ["Laravel", "Pusher", "WebSockets", "PHP", "JavaScript", "MySQL"],
+  },
 ];
 
 const ProjectsSection = () => (
