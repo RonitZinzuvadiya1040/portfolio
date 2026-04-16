@@ -8,21 +8,28 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY + 120;
-
-      if (scrollY < 200) {
-        setActiveSection("Home");
+      // If near the bottom of page, highlight Contact
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 100) {
+        setActiveSection("Contact");
         return;
       }
 
+      const offset = 150;
+
+      // Check sections from bottom to top, find the one whose top is above viewport offset
       for (let i = links.length - 1; i >= 0; i--) {
         const id = links[i] === "Home" ? "hero" : links[i].toLowerCase();
         const el = document.getElementById(id);
-        if (el && el.offsetTop <= scrollY) {
-          setActiveSection(links[i]);
-          return;
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= offset) {
+            setActiveSection(links[i]);
+            return;
+          }
         }
       }
+
+      setActiveSection("Home");
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
