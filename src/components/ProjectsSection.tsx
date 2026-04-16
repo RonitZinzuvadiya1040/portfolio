@@ -13,7 +13,7 @@ const projects = [
     name: "Meshhh",
     url: "https://meshhh.com",
     desc: "Construction industry platform connecting tradespeople, contractors, and project managers across the UK.",
-    tech: ["WordPress", "PHP", "JavaScript", "jQuery", "Elementor", "Custom Theme"],
+    tech: ["Laravel", "PHP", "JavaScript", "jQuery", "MySQL", "AJAX"],
   },
   {
     name: "Independent Music Mall",
