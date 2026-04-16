@@ -8,6 +8,12 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      // If at the bottom of page, highlight last section
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 50) {
+        setActiveSection(links[links.length - 1]);
+        return;
+      }
+
       const scrollY = window.scrollY + 120;
 
       if (scrollY < 200) {
