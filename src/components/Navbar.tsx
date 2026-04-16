@@ -8,9 +8,9 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-4 left-1/2 -translate-x-1/2 z-50"
+      className="fixed top-4 inset-x-0 z-50 flex justify-center px-4"
     >
-      <div className="flex items-center gap-1 px-2 py-2 rounded-full bg-background/80 backdrop-blur-lg border border-border shadow-lg">
+      <div className="flex items-center gap-1 px-2 py-2 rounded-full bg-background/80 backdrop-blur-lg border border-border shadow-lg overflow-x-auto max-w-full scrollbar-hide">
         {links.map((l) => (
           <a
             key={l}
