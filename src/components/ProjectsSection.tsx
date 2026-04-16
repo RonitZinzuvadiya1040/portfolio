@@ -6,32 +6,32 @@ const projects = [
   {
     name: "Golden Pathways",
     url: "https://goldenpathways.com",
-    desc: "Full-featured web platform built with modern backend technologies.",
-    tech: ["Laravel", "PHP", "MySQL", "REST API", "Tailwind CSS"],
+    desc: "Senior living care platform helping families find assisted living, memory care, and home care services.",
+    tech: ["Laravel", "React.js", "Redux", "MySQL", "REST API", "Tailwind CSS"],
   },
   {
     name: "Meshhh",
     url: "https://meshhh.com",
-    desc: "Interactive web application with custom functionality and integrations.",
-    tech: ["Laravel", "jQuery", "AJAX", "Bootstrap", "MySQL"],
+    desc: "Construction industry platform connecting tradespeople, contractors, and project managers across the UK.",
+    tech: ["WordPress", "PHP", "JavaScript", "jQuery", "Elementor", "Custom Theme"],
   },
   {
     name: "Independent Music Mall",
     url: "https://www.independentmusicmall.com",
-    desc: "E-commerce platform for independent music artists and labels.",
-    tech: ["Magento 2", "PHP", "MySQL", "JavaScript", "CSS"],
+    desc: "E-commerce platform for independent music artists with profit sharing and digital music sales.",
+    tech: ["CodeIgniter 3", "PHP", "MySQL", "Stripe", "Payment Gateway", "JavaScript"],
   },
   {
     name: "Viva Wireless",
     url: "https://www.vivawirelessusa.com",
-    desc: "Wireless service provider platform with user-friendly interface.",
-    tech: ["Laravel", "PHP", "MySQL", "Bootstrap", "REST API"],
+    desc: "E-commerce store for wireless accessories, phone cases, repair parts, and electronic devices.",
+    tech: ["Magento 2", "PHP", "MySQL", "JavaScript", "jQuery", "E-commerce"],
   },
   {
-    name: "Scriptrx",
+    name: "ScriptRx",
     url: "https://scriptrx.co.uk",
-    desc: "Healthcare-related web platform serving UK market.",
-    tech: ["CodeIgniter 3", "PHP", "MySQL", "jQuery", "AJAX"],
+    desc: "E-prescription healthcare platform for secure digital prescriptions and pharmacy integration.",
+    tech: ["Laravel", "PHP", "Third-party APIs", "Payment Integration", "MySQL", "Healthcare"],
   },
 ];
 
