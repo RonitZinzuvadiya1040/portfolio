@@ -44,7 +44,7 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
       className="fixed top-4 inset-x-0 z-50 flex justify-center px-4"
     >
-      <div className="flex items-center gap-1 px-2 py-2 rounded-full bg-background/80 backdrop-blur-lg border border-border shadow-lg overflow-x-auto max-w-full scrollbar-hide">
+      <div className="flex flex-wrap justify-center items-center gap-1 px-3 py-2 rounded-3xl sm:rounded-full bg-background/80 backdrop-blur-lg border border-border shadow-lg max-w-[calc(100vw-2rem)]">
         {links.map((l) => (
           <a
             key={l}
